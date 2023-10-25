@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>한샘리하우스 - 부산 거제 레이카운티 공동구매</title>
+    <style>
+        @charset "utf-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img, video, iframe{
+    vertical-align: middle;
+}
+img, video{
+    max-width: 100%;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    font-family: 'Pretendard-Regular';
+}
+
+    /* title */
+    #title{
+        width: 100%;
+        margin: 100px auto 0;
+        text-align: center;
+    }
+
+    #title h1{
+        margin-bottom: 15px;
+    }
+
+    #title h3{
+        margin-bottom: 20px;
+    }
+
+    #title h4{
+        color: rgb(218, 218, 218);
+        margin-bottom: 30px;
+    }
+
+    /* main banner */
+    .main_banner{
+        background-image: url(./images/main_banner.jpg);
+        height: 575px;
+        background-position: center;
+        background-attachment: fixed;
+        text-align: center;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .main_text h3{
+        font-size: 30px;
+    }
+
+    .main_text h1{
+        font-size: 90px;
+        margin-top: -10px;
+    }
+
+    .main_text h4{
+        font-size: 25px;
+        font-weight: lighter;
+    }
+
+    #content{
+        width: 750px;
+        margin: 0 auto;
+    }
+    
+    /* celebrate */
+    .celebrate{
+        margin-top: 80px;
+        text-align: center;
+    }
+
+
+
+
+    /* tab */
+    
+    #wrapper{
+    width: 750px;
+    margin: 120px auto;
+    }
+    /*TAB CSS*/
+
+    ul.tabs {
+        list-style: none;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    ul.tabs li {
+    width: 20%;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    background: #e0e0e0;
+    display: inline-block;
+        
+    }
+    ul.tabs li a {
+        text-decoration: none;
+        text-align: left;
+        color: #4f4f4f;
+        display: block;
+        font-size: 17px;
+        line-height: 26px;
+        padding: 12px 0;
+        padding-left: 20px;
+        outline: none;
+    }
+    ul.tabs li a:hover {
+        background-color: black !important;
+        color: white !important;
+        font-weight: 600;
+
+    }
+
+    ul.tabs li a span{
+        font-weight: 600;
+    }
+
+    html ul.tabs li.active, html ul.tabs li.active a:hover  {
+            /*--Makes sure that the active tab does not listen to the hover properties--*/
+        background: #000000;
+      
+        /*--Makes the active tab look like it's connected with its content--*/
+    }
+
+    /*Tab Conent CSS*/
+    .tab_container {
+        width: 100%;
+        border-top: none;
+        overflow: hidden;
+        clear: both;
+        float: left; 
+        width: 100%;
+        background: #fff;
+    }
+    .tab_content {
+        font-size: 1.2em;
+    }
+
+    .tab{
+        background-color: #e2e2e2 !important;
+    }
+    .active a{
+        background-color: black !important;
+        color: white !important;
+        font-weight: 600;
+    }
+
+
+
+    /* tab1(RESERVATION) */
+    .reservation{
+        margin-top: 60px;
+        margin-bottom: 40px;
+    }
+
+
+
+
+    /* tab2(INVITATION) */
+    .invitation{
+        position: relative;
+        padding-bottom: 40px;
+    }
+
+    .invitation>h1{
+        font-size: 44px;
+        margin: 60px 0 18px;
+    }
+    .invitation>h2{
+        font-weight: 100;
+        line-height: 42px;
+        font-size: 28px;
+    }
+
+    .invitation>p{
+        position: absolute;
+        top: 135px;
+        left: 0;
+    }
+
+
+
+
+    /* schedule 설명회일정 */
+    .schedule{
+        margin-top: 370px;
+        color: black;
+    }
+    .schedule a{
+        color: black;
+    }
+    .schedule_content:hover{
+        background-color: #f2eaf5;
+    }
+    .schedule_content{
+        border-top: rgb(184, 184, 184) solid 1px;
+        border-bottom: rgb(184, 184, 184) solid 1px;
+        margin-bottom: 10px;
+        padding: 30px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .schedule_left{
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    .schedule_top{
+        display: flex;
+        float: left;
+        margin-bottom: 15px;
+        align-items: center;
+    }
+    .schedule_top h3{
+        font-size: 15px;
+        display: inline-block;
+        padding: 7px 12px;
+        color: white;
+        background-color: #937aba;
+        text-align: center;
+    }
+    .schedule_top h1{
+        font-size: 30px;
+        margin-left: 10px;
+    }
+    .schedule_bottom{
+        font-size: 18px;
+        color: #707070;
+    }
+    .schedule_right{
+        display: flex;
+        align-items: center;
+    }
+    .schedule_right h2{
+        font-size: 18px;
+        color: #65586a;
+    }
+    
+    .over_more{
+        margin-left: 1px;
+    }
+    .over{
+        font-weight: bold;
+        color: black !important;
+    }
+
+    .offline{
+        background-color: #b6696a !important;
+    }
+
+
+    /* benefit(tab3) */
+    .benefit{
+        height: fit-content;
+    }
+    .benefit_img{
+        margin: 30px 0 10px;
+    }
+    .benefit_img2{
+        margin-bottom: 40px;
+    }
+    .benefit_text{
+        font-size: 12px;
+        color: #b2b2b2;
+        line-height: 17px;
+        margin: 10px 0 50px;
+    }
+
+
+    /* Media */
+    @media (max-width:750px){
+        #content {
+            width: 100%;
+        }
+
+        #wrapper {
+            width: 100%;
+            margin-top: 15vw;
+            margin-bottom: 0;
+        }
+
+        .invitation>h1{
+            margin-left: 1rem;
+        }
+        .invitation>h2{
+            margin-left: 1rem;
+        }
+
+        #title h1 {
+        font-size: 5vw;
+        margin-bottom: 1.5vw;
+        }
+
+        #title h3 {
+            font-size: 4vw;
+            margin-bottom: 1.5vw;
+            font-weight: 500;
+        }
+
+        #title h4 {
+            font-size: 2.8vw;
+            margin-bottom: 4.5vw;
+        }
+
+        .main_text h3 {
+    font-size: 5vw;
+}
+
+.main_text h1 {
+    font-size: 14vw;
+    margin-top: -1vw;
+}
+
+.main_text h4 {
+    font-size: 4.5vw;
+}
+
+.main_banner {
+    height: 100vw;
+}
+
+.celebrate {
+    margin-top: 8vw;
+}
+
+ul.tabs li a {
+    font-size: 2.5vw;
+    line-height: 3.5vw;
+    padding: 2vw;
+}
+
+.reservation {
+    margin-top: 5vw;
+}
+
+.invitation{
+    padding-bottom: 0;
+}
+.invitation>h1 {
+    font-size: 7vw;
+    margin: 5vw 0 2vw;
+    margin-left: 1rem;
+}
+
+.invitation>h2 {
+    line-height: 6vw;
+    font-size: 4vw;
+}
+
+.invitation>p {
+    top: 16vw;
+}
+
+
+/* schedule */
+.schedule {
+    margin-top: 48vw;
+}
+.schedule_content {
+    padding: 4vw;
+}
+.schedule_right{
+    margin-left: 1vw;
+}
+.over_more {
+    margin-left: 1vw;
+}
+.schedule_top h3 {
+    font-size: 2vw;
+}
+.schedule_top h1 {
+    font-size: 4.5vw;
+}
+.schedule_bottom {
+    font-size: 2.8vw;
+}
+.schedule_right h2 {
+    font-size: 2.6vw;
+}
+
+.schedule_top {
+    margin-bottom: 1vw;
+}
+
+
+.benefit_text {
+    font-size: 2vw;
+    line-height: 3vw;
+    margin: 1vw 0 50px;
+}
+
+
+
+}
+    
+
+    
+
+
+</style>
+
+
+<!--제이쿼리 라이브러리파일-->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<!--탭 제이쿼리-->
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        //처음들어갔을때 모습 만들기...
+        $(".tab_content").hide(); //tab_content 부분을 모두 숨김.
+        $("ul.tabs li:first").addClass("active").show(); //첫번째 탭이 active클래스를 붙이고, 보여줌.
+        $(".tab_content:first").show(); //tab_contents중 첫번째꺼를 보여줌
+
+        //On Click Event
+        $("ul.tabs li").click(function() {
+
+            $("ul.tabs li").removeClass("active"); //Remove any "active" class
+            $(this).addClass("active"); //선택한 탭에만 active클래스 붙임
+            $(".tab_content").hide(); //모든 contents들 숨김
+
+            var activeTab = $(this).find("a").attr("href"); //Find the href attribute value to identify the active tab + content
+            /*.attr( attributeName ) -> 선택한 요소의 속성의 값을 가져옵니다.
+            .find()는 어떤 요소의 하위 요소 중 특정 요소를 찾을 때 사용합니다.*/
+            $(activeTab).fadeIn(); //Fade in the active ID content(active되어있는 칸의 id 값을 가진 부분이 나타남)
+            return false;
+        });
+
+    });
+</script>
+</head>
+
+<body>
+
+    <!-- title -->
+    <div id="title">
+        <h1>한샘리하우스 부산 거제 레이카운티 공동구매</h1>
+        <h3>2023.10.28 - 2023.12.31</h3>
+        <h4>해당 프로모션은 한샘리하우스 부산중앙 단독으로 진행합니다</h4>
+    </div>
+
+    <!-- main banner -->
+    <div class="main_banner">
+
+        <div class="main_text">
+            <h3>HANSSEM</h3>
+            <h1>VALUE-UP</h1>
+            <h4>레이카운티의 가치를 한샘으로 올리다</h4>
+        </div>
+
+    </div>
+    
+
+<div id="content">
+
+
+    <!-- celebrate -->
+    <div class="celebrate">
+        <p><img src="./images/celebration.jpg" alt="celebration_pic"></p>
+    </div>
+
+    <!-- tab -->
+    <div id="wrapper">	
+        <!--탭 메뉴 영역 -->
+        <ul class="tabs">
+            <li><a href="#tab1" class="tab left_border"><span>01</span><br>사전점검<br>실측예약</a></li>
+            <li><a href="#tab2" class="tab"><span>02</span><br>한샘왕<br>입주민 설명회</a></li>
+            <li><a href="#tab3" class="tab"><span>03</span><br>공동구매<br>단품 할인이벤트</a></li>
+            <li><a href="#tab4" class="tab"><span>04</span><br>레이카운티<br>추천 제품/견적</a></li>
+            <li><a href="#tab5" class="tab"><span>05</span><br>설치 지정일<br>예약 서비스</a></li>
+        </ul>
+    
+        <!--탭 콘텐츠 영역 -->
+        <div class="tab_container">
+    
+            <div id="tab1" class="tab_content">
+                <!--Content-->
+                <p class="reservation"><img src="./images/reservation.jpg" alt="time table"></p>
+               
+            </div>
+
+
+
+
+
+            <!-- tab2 -->
+            <div id="tab2" class="tab_content">
+               <!--Content-->
+               <div class="invitation">
+                <h1>INVITATION</h1>
+                <h2>여러분들을 초대합니다.<br>
+                한샘리하우스 RD 전국 1위,<br>
+                부산중앙 정영학 본부장의 입주민 설명회</h2>
+
+                <p><img src="./images/invitation.png" alt="invitation_img"></p>
+
+                <div class="schedule">
+
+                    <a href="https://www.youtube.com/channel/UCXNHzwxIFMHvoZZtbshRXeA" target="_blank">
+                        <div class="schedule_content">
+                            <div class="schedule_left">
+                                <div class="schedule_top">
+                                    <h3>온라인</h3>
+                                    <h1>10월 26일(목) 입주민 설명회</h1>
+                                </div>
+    
+                                <div class="schedule_bottom">
+                                    <p>인테리어 하기 유튜브채널 ｜ 오전 11시 ~ 오후 12시 30분</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule_right">
+                                <h2>방송 바로보기 ></h2>
+                            </div>
+                            
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="schedule_content">
+                            <div class="schedule_left">
+                                <div class="schedule_top">
+                                    <h3 class="offline">오프라인</h3>
+                                    <h1>11월 4일(월) 입주민 설명회</h1>
+                                </div>
+    
+                                <div class="schedule_bottom">
+                                    <p>한샘디자인파크 롯데동래점 ｜ 오전 11시 ~ 오후 1시</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule_right">
+                                <h2>지금 예약하기 ></h2>
+                            </div>
+                            
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="schedule_content">
+                            <div class="schedule_left">
+                                <div class="schedule_top">
+                                    <h3 class="offline">오프라인</h3>
+                                    <h1>11월 8일(월) 입주민 설명회</h1>
+                                </div>
+    
+                                <div class="schedule_bottom">
+                                    <p>한샘디자인파크 롯데동래점 ｜ 오전 11시 ~ 오후 1시</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule_right over_more">
+                                <h2 class="over">예약 마감</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div><!--schedule-->
+            </div><!--invitation-->
+            </div><!--tab2-->
+
+
+            <!-- tab3 -->
+            <div id="tab3" class="tab_content">
+                <!--Content-->
+                <div class="invitation benefit">
+                    <h1>BENEFIT</h1>
+                    <h2>레이카운티 품격에 맞게<br>
+                    입주민들을 위한 최대의 혜택을 준비했습니다.<br>
+                    한샘, 지금이 기회입니다.</h2>
+                </div>
+
+                <p><img src="./images/benefit.jpg" alt="benefit1" class="benefit_img"></p>
+
+                <p class="benefit_text">
+                    * 본 이벤트는 계약기준이므로, 미 달성시 계약진행이 어렵습니다. *레이카운티에 설치되는 현장만 적용됩니다.<br>
+* 할인은 시공비를 제외합니다. * 기준을 충족하는 경우 이후에 대한 계약은 동일한 혜택이 적용 가능합니다.<br>
+* 타 이벤트와 중복불가합니다. * 최소 2개월 이내에 설치하여야 할인이 적용됩니다.
+                </p>
+
+                <p class="benefit_img2"><img src="./images/benefit2.jpg" alt="benefit2"></p>
+
+             </div>
+    
+
+
+            <!-- tab4 -->
+             <div id="tab4" class="tab_content">
+                <!--Content-->
+                <h1>tab4영역</h1>
+                내용 내용 내용 내용 내용 내용 
+             </div>
+    
+
+
+
+            <!-- tab5 -->
+             <div id="tab5" class="tab_content">
+                <!--Content-->
+                <h1>tab5영역</h1>
+                내용 내용 내용 내용 내용 내용 
+             </div>
+        </div><!--tab_container-->
+    </div><!--wrapper-->
+
+</div><!--content(750px)-->
+
+
+    
+</body>
+</html>
