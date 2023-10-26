@@ -104,7 +104,7 @@ body{
         justify-content: center;
         position: sticky;
         top: 0;
-        z-index: 9999;
+        z-index: 99;
     }
     ul.tabs li {
     width: 20%;
@@ -180,7 +180,7 @@ body{
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 99;
+        z-index: 1;
     }
     .reservation_situation{
         background-color: #a48357;
@@ -242,7 +242,6 @@ body{
     /* tab2(INVITATION) */
     .invitation{
         position: relative;
-        padding-bottom: 40px;
     }
 
     .invitation>h1{
@@ -332,6 +331,10 @@ body{
     }
 
 
+    .schedule_right{
+        display: none;
+    }
+
     /* benefit(tab3) */
     .benefit{
         height: fit-content;
@@ -401,14 +404,6 @@ body{
         font-size: 24px;
     }
 
-
-
-
-
-
-
-
-
     .benefit_img2{
         margin-bottom: 40px;
     }
@@ -418,6 +413,166 @@ body{
         line-height: 17px;
         margin: 10px 0 50px;
     }
+
+
+
+    /* tab4(recommend) */
+    .recommend_img{
+        margin-top: 40px;
+    }
+
+    .recommend{
+        background-color: #e8ddcf;
+        height: 1255px;
+        padding-top: 35px;
+    }
+    .title_back{
+        width: 335px;
+        height: 22px;
+        margin: 0 auto;
+        background-color: #d9d0b1;
+        position: relative;
+    }
+    .title_back h1{
+        width: 100%;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 25px;
+        text-align: center;
+        font-weight: 700;
+    }
+
+
+
+    #container{
+        margin: 0 auto;
+    }
+
+        /* TAB CSS */
+
+        ul.new-tabs {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 44px;
+
+        }
+        ul.new-tabs li {
+            width: 144px;
+            margin: 0 auto;
+            border: 2px solid #3c3c3c;
+            position: relative;
+            background: #ffffff;
+        }
+        ul.new-tabs li a {
+            text-decoration: none;
+            text-align: center;
+            color: #000;
+            display: block;
+            padding: 10px 0;
+        }
+        ul.new-tabs li a:hover {
+            background-color: #3c3c3c !important;
+            color: white;
+        }
+        ul.new-tabs li:hover{
+            background-color: #3c3c3c;
+        }
+        ul.new-tabs li:hover .new-tab{
+            color: white;
+        }
+        html ul.new-tabs li.actives, html ul.new-tabs li.actives a:hover  {
+             /* Makes sure that the active tab does not listen to the hover properties */
+            background: #3c3c3c;
+            /* Makes the active tab look like it's connected with its content */
+        }
+        html ul.new-tabs li.actives a{
+            color: white;
+        }
+
+        /* Tab Content CSS */
+        .new-tab-container {
+            border-top: none;
+            overflow: hidden;
+            clear: both;
+            float: left;
+            width: 100%;
+            background: #e8ddcf;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .new-tab-content {
+            padding: 20px;
+            font-size: 1.2em;
+        }
+
+        .new-tab{
+
+        }
+
+        .new-tab-content h2{
+            margin-top: 40px;
+        }
+
+
+
+
+
+
+        /* quick-menu */
+.quick-menu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  text-align: center; }
+  .quick-menu > ul {
+    display: table;
+    width: 100%;
+    table-layout: fixed; }
+    .quick-menu > ul > li {
+      display: table-cell;
+      vertical-align: top;
+      padding-top: 8px; }
+      .quick-menu > ul > li > a {
+        display: block;
+        font-size: 14px;
+        color: #333;
+        font-weight: 400;
+        line-height: 50px;
+        background-color: #f2f4f9; }
+        .quick-menu > ul > li > a img {
+          position: relative;
+          top: 3px;
+          display: inline-block;
+          width: 18px;
+          margin-right: 2px; }
+      .quick-menu > ul > li:nth-of-type(2) {
+        padding-top: 0; }
+        .quick-menu > ul > li:nth-of-type(2) > a {
+          font-size: 16px;
+          color: #fff;
+          font-weight: bold;
+          line-height: 58px;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px;
+          background-color: #2659d9;
+          background-image: url(/_files/6h1VQSran.png);
+          background-repeat: no-repeat;
+          background-size: 46px auto;
+          background-position: 50% 50%; }
+  
+      
+
+
+   
+
 
 
     /* Media */
@@ -610,6 +765,14 @@ ul.tabs li a {
 .intable_bottom h2 {
     font-size: 4vw;
 }
+
+/* mobile recommendation */
+.recommend_img{
+    margin-top: 5vw;
+}
+
+
+
 }
     
 
@@ -643,6 +806,37 @@ ul.tabs li a {
 
     });
 </script>
+
+
+
+<!-- jQuery Library File -->
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    
+<!-- Tab jQuery -->
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		// Initial setup
+		$(".new-tab-content").hide();
+		$("ul.new-tabs li:first").addClass("actives").show();
+		$(".new-tab-content:first").show();
+
+		// On Click Event
+		$("ul.new-tabs li").click(function() {
+
+			$("ul.new-tabs li").removeClass("actives");
+			$(this).addClass("actives");
+			$(".new-tab-content").hide();
+
+			var activeTab = $(this).find("a").attr("href");
+			$(activeTab).fadeIn();
+			return false;
+		});
+
+	});
+</script>
+
+
 </head>
 
 <body>
@@ -876,7 +1070,7 @@ ul.tabs li a {
                             <div class="schedule_left">
                                 <div class="schedule_top">
                                     <h3 class="offline">오프라인</h3>
-                                    <h1>11월 4일(월) 입주민 설명회</h1>
+                                    <h1>10월 31일(화) 입주민 설명회</h1>
                                 </div>
     
                                 <div class="schedule_bottom">
@@ -896,7 +1090,45 @@ ul.tabs li a {
                             <div class="schedule_left">
                                 <div class="schedule_top">
                                     <h3 class="offline">오프라인</h3>
-                                    <h1>11월 8일(월) 입주민 설명회</h1>
+                                    <h1>11월 9일(목) 입주민 설명회</h1>
+                                </div>
+    
+                                <div class="schedule_bottom">
+                                    <p>한샘디자인파크 롯데동래점 ｜ 오전 11시 ~ 오후 1시</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule_right over_more">
+                                <h2 class="over">예약 마감</h2>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="schedule_content">
+                            <div class="schedule_left">
+                                <div class="schedule_top">
+                                    <h3 class="offline">오프라인</h3>
+                                    <h1>11월 18일(토) 입주민 설명회</h1>
+                                </div>
+    
+                                <div class="schedule_bottom">
+                                    <p>한샘디자인파크 롯데동래점 ｜ 오전 11시 ~ 오후 1시</p>
+                                </div>
+                            </div>
+
+                            <div class="schedule_right over_more">
+                                <h2 class="over">예약 마감</h2>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="#">
+                        <div class="schedule_content">
+                            <div class="schedule_left">
+                                <div class="schedule_top">
+                                    <h3 class="offline">오프라인</h3>
+                                    <h1>11월 23일(목) 입주민 설명회</h1>
                                 </div>
     
                                 <div class="schedule_bottom">
@@ -1042,9 +1274,45 @@ ul.tabs li a {
             <!-- tab4 -->
              <div id="tab4" class="tab_content">
                 <!--Content-->
-                <h1>tab4영역</h1>
-                내용 내용 내용 내용 내용 내용 
-             </div>
+                <div class="invitation">
+                    <h1>RECOMMENDATION</h1>
+                    <h2>한샘왕이 추천하는 한샘 붙박이장 추천 라인업!<br>
+                        평수별 붙박이장 추천제품과 견적 보시고<br>
+                        우리집에 꼭 맞는 제품 설치하세요. </h2>
+
+                    <div class="recommend_img">
+                        <img src="./images/recommend.jpg" alt="recommend pruduct">
+                    </div>
+
+                    <div class="recommend">
+                        <div class="title_back">
+                            <h1>레이카운티 평수별 추천 제품 견적</h1>
+                        </div>
+
+                        <div id="container">    
+                            <!-- Tab Menu Area -->
+                            <ul class="new-tabs">
+                                <li><a href="#new-tab1" class="new-tab new-left-border">81A(24평)</a></li>
+                                <li><a href="#new-tab2" class="new-tab">113A(34평)</a></li>
+                            </ul>
+                        
+                            <!-- Tab Content Area -->
+                            <div class="new-tab-container">
+                                <div id="new-tab1" class="new-tab-content">
+                                    <h1><img src="./images/81a.png" alt="81a"></h1>
+                                    <h2><img src="./images/81a_2.png" alt="81a_2"></h2>
+                                </div>
+
+
+                        
+                                <div id="new-tab2" class="new-tab-content">
+                                    <h1><img src="./images/113a.png" alt="81a"></h1>
+                                    <h2><img src="./images/113a_2.png" alt="81a_2"></h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     
 
 
@@ -1059,5 +1327,26 @@ ul.tabs li a {
     </div><!--wrapper-->
 
 </div><!--content(750px)-->
+
+<nav class="quick-menu">
+    <ul>
+        <li>
+            <a href="tel:031-608-0085">
+                <img src="/_files/6h1VQStd2.png" alt=""> 전화문의
+            </a>
+        </li>
+        <li>
+            <a href="https://naver.me/5qAJxflp" target="_blank">바로예약</a>
+        </li>
+        <li>
+            <a href="http://pf.kakao.com/_mVwpxj">
+                <img src="/_files/6h1VQS40g.png" alt=""> 카카오문의
+            </a>
+        </li>
+    </ul>
+</nav>
+
+
+
 </body>
 </html>
